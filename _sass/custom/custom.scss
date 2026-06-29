@@ -1,0 +1,40 @@
+html,
+body {
+  direction: rtl;
+}
+
+body {
+  text-align: right;
+}
+
+.main-content,
+.side-bar,
+.site-header,
+.site-footer {
+  direction: rtl;
+}
+
+code,
+pre,
+kbd,
+samp,
+.highlight,
+.language-plaintext,
+.rouge-code {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+.main-content table {
+  direction: rtl;
+}
+
+.main-content th,
+.main-content td {
+  text-align: right;
+}
+
+.nav-list .nav-list-item .nav-list-link {
+  text-align: right;
+}

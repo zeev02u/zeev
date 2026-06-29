@@ -1,0 +1,28 @@
+title: אתר לימוד לדוגמה
+description: אתר עברי קטן למורות ומורים, בנוי ב-Jekyll עם Just the Docs.
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+
+url: "https://zeev02u.github.io"
+baseurl: "/zeev"
+
+lang: he
+dir: rtl
+
+plugins:
+  - jekyll-remote-theme
+
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+
+aux_links:
+  "מאגר GitHub":
+    - "https://github.com/zeev02u/zeev"
+
+callouts:
+  note:
+    title: שימו לב
+    color: blue
+  tip:
+    title: טיפ
+    color: green

@@ -2,42 +2,40 @@
 
 ## Project Structure & Module Organization
 
-This repository is currently minimal, so keep new work organized from the start. Place application source code under `src/`, tests under `tests/`, and static or generated assets under `assets/` when needed. Use a clear module layout that mirrors the product area being implemented, for example `src/auth/`, `src/ui/`, and `tests/auth/`.
+This repository contains a Hebrew Jekyll site published by GitHub Pages. Put top-level pages in the repository root, such as `index.md` and `about.md`. Put lesson content under `lessons/`, with `lessons/index.md` acting as the parent navigation page. Keep small local presentation changes in `_sass/custom/custom.scss`.
 
-Avoid placing implementation files at the repository root. Reserve the root for project metadata and documentation such as `README.md`, `AGENTS.md`, package manifests, build files, and environment examples.
+Do not copy the Just the Docs theme source, layouts, or assets into this repository unless a small local override is explicitly needed. The site uses the pinned remote theme in `_config.yml`.
 
-## Build, Test, and Development Commands
+## Page Front Matter
 
-No build or test tooling is defined yet. When adding a language or framework, document the exact commands here and in `README.md`.
+Every page must start with Jekyll front matter. Use this pattern for lessons:
 
-Common examples:
-
-```sh
-npm install      # install JavaScript dependencies
-npm run dev      # start a local development server
-npm test         # run the test suite
+```md
+---
+layout: default
+title: שם השיעור
+parent: שיעורים
+nav_order: 3
+permalink: /lessons/example/
+---
 ```
 
-If using another stack, prefer standard commands such as `make test`, `pytest`, `go test ./...`, or `cargo test`.
+Use `nav_order` to control menu order and `permalink` to keep stable links.
 
-## Coding Style & Naming Conventions
+## Hebrew, RTL, and Technical Text
 
-Follow the formatter and linter conventions of the chosen stack. Add configuration files such as `.editorconfig`, `.prettierrc`, `eslint.config.*`, `pyproject.toml`, or equivalent before the codebase grows.
+The site is primarily Hebrew and right-to-left. Keep prose readable in Hebrew, and verify that tables, callouts, and navigation work well on mobile. Code blocks, terminal commands, file names, configuration keys, and inline code such as `nav_order` must remain left-to-right.
 
-Use descriptive names. Prefer `kebab-case` for file and directory names in web projects, `snake_case` for Python modules, and `PascalCase` for exported classes or components where the language convention expects it. Keep modules focused and avoid mixing unrelated responsibilities in one file.
+## Build, Deployment, and Workflow
 
-## Testing Guidelines
+Local WSL, Bundler, Ruby, and Jekyll serving are not part of this workshop repository's required workflow. Do not run or require `wsl`, `bundle`, `jekyll`, `ruby`, `gem`, or `bundle exec jekyll serve` for normal work.
 
-Add tests with each behavior change. Keep test files close to the feature they validate or mirror the `src/` tree inside `tests/`. Use recognizable names such as `*.test.ts`, `*.spec.ts`, `test_*.py`, or the default convention of the selected framework.
+Every meaningful change must leave the GitHub Pages build passing. Deployment is handled by `.github/workflows/pages.yml` after pushes to `main`.
 
-Tests should cover expected behavior, edge cases, and regressions for fixed bugs. Document any required services, fixtures, or environment variables.
+## Security & Privacy
 
-## Commit & Pull Request Guidelines
+Never commit secrets, access tokens, private student data, parent information, school records, or identifying classroom data. Use examples that are fictional and safe for a public repository.
 
-This directory is not currently initialized as a Git repository, so no existing commit convention is available. Once Git is used, prefer short imperative commit messages, for example `Add login validation` or `Fix report export path`.
+## Agent-Specific Instructions
 
-Pull requests should include a brief summary, testing notes, linked issues when applicable, and screenshots or recordings for visible UI changes. Keep changes scoped so reviewers can understand the intent quickly.
-
-## Security & Configuration Tips
-
-Do not commit secrets, credentials, private keys, or local environment files. Use `.env.example` to document required configuration keys and keep real values in ignored local files.
+After this initial setup, future agents may read and edit the repository as requested, but must not commit, pull, or push unless the user explicitly asks for Git operations.
