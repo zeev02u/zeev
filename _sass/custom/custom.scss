@@ -38,3 +38,22 @@ samp,
 .nav-list .nav-list-item .nav-list-link {
   text-align: right;
 }
+
+@media (min-width: 50rem) {
+  .side-bar {
+    right: 0;
+    left: auto;
+    border-right: 0;
+    border-left: 1px solid $border-color;
+  }
+
+  .main {
+    margin-right: 16.5rem;
+    margin-left: 0;
+  }
+
+  .main-header {
+    right: 16.5rem;
+    left: 0;
+  }
+}
