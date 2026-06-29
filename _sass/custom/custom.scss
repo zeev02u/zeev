@@ -40,6 +40,10 @@ samp,
 }
 
 @media (min-width: 50rem) {
+  :root {
+    --rtl-sidebar-width: 16.5rem;
+  }
+
   .side-bar {
     right: 0;
     left: auto;
@@ -48,12 +52,18 @@ samp,
   }
 
   .main {
-    margin-right: 16.5rem;
-    margin-left: 0;
+    margin-right: var(--rtl-sidebar-width) !important;
+    margin-left: 0 !important;
   }
 
   .main-header {
-    right: 16.5rem;
-    left: 0;
+    right: var(--rtl-sidebar-width) !important;
+    left: 0 !important;
+  }
+}
+
+@media (min-width: 66.5rem) {
+  :root {
+    --rtl-sidebar-width: calc((100% - 66.5rem) / 2 + 16.5rem);
   }
 }
