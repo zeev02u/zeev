@@ -11,6 +11,12 @@ dir: rtl
 plugins:
   - jekyll-remote-theme
 
+exclude:
+  - README.md
+  - AGENTS.md
+  - THIRD_PARTY_NOTICES.md
+  - .pages-artifact-check/
+
 color_scheme: light
 search_enabled: true
 heading_anchors: true
