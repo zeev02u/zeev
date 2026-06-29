@@ -39,6 +39,16 @@ samp,
   text-align: right;
 }
 
+.skip-to-main {
+  right: 0 !important;
+  left: auto !important;
+  transform: translateY(-200%);
+}
+
+.skip-to-main:focus {
+  transform: none;
+}
+
 @media (min-width: 50rem) {
   :root {
     --rtl-sidebar-width: 16.5rem;
